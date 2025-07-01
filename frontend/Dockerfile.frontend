@@ -1,0 +1,20 @@
+# Node.js'in hafif bir versiyonunu temel al
+FROM node:20-alpine
+
+# Çalışma dizinini /app olarak ayarla
+WORKDIR /app
+
+# Önce sadece paket yöneticisi dosyalarını kopyala (önbellek optimizasyonu)
+COPY package*.json ./
+
+# Bağımlılıkları yükle
+RUN npm install
+
+# Frontend'in geri kalan tüm dosyalarını kopyala
+COPY . .
+
+# Vite'ın kullandığı portu dışarıya aç
+EXPOSE 5173
+
+# Konteyner çalıştığında hangi komutun çalışacağını belirt
+CMD ["npm", "run", "dev"]

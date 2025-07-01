@@ -1,0 +1,68 @@
+# Docker'ın kendi dosyalarını görmezden gel
+Dockerfile*
+docker-compose.yml
+.dockerignore
+
+# Git kontrol dosyaları
+.git/
+.gitignore
+
+# Python Virtual Environments - Absolute ignore
+.venv
+.venv/
+venv
+venv/
+venv_devre_disi/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Veritabanı ve Celery durum dosyaları
+database.db
+celerybeat-schedule*
+
+# İşletim sistemine özel dosyalar
+.DS_Store
+
+# IDE ve editör dosyaları
+.vscode/
+.idea/
+
+# Frontend'in devasa bağımlılık klasörü
+# Dockerfile.frontend içinde ayrı bir `npm install` çalıştırıldığı için bu gerekli
+frontend/node_modules/
+
+# Kök dizindeki node_modules (eğer varsa)
+node_modules/
+
+# Üretilen veya geçici medya dosyaları
+output/
+temp_processing/
+videos/
+
+# Büyük boyutlu gereksiz dosyalar
+cloudflared.deb
+

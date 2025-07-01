@@ -1,0 +1,74 @@
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #495057;
+  padding-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Menüyü aşağı iter */
+}
+
+.sidebar-menu li {
+  padding: 15px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar-menu li:hover {
+  background-color: #495057;
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid #495057;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto; /* İçerik taşarsa scroll çıksın */
+}
+
+.main-content h1 {
+    margin-top: 0;
+}

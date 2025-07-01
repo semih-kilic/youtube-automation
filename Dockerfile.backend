@@ -1,0 +1,26 @@
+# Python'un hafif bir versiyonunu temel al
+FROM python:3.12-slim
+
+# Sistem paketlerini güncelle ve FFmpeg'i kur
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Çalışma dizinini /app olarak ayarla
+WORKDIR /app
+
+# Önce sadece gereksinimler dosyasını kopyala
+# Bu, Docker'ın katman önbelleğini akıllıca kullanmasını sağlar
+COPY requirements.txt .
+
+# Gereksinimleri yükle
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Projenin geri kalan tüm dosyalarını kopyala
+COPY . .
+
+# Output ve temp dizinlerini oluştur
+RUN mkdir -p /app/output /app/temp_processing
+
+# Bu konteynerin hangi portu dışarıya açacağını belirt
+EXPOSE 5001
